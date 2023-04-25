@@ -1,12 +1,31 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+struct GamePiece
+{
+	char name[10];
+	bool is_white;
+};
+
+struct BoardLocation
+{
+	int number;
+	struct GamePiece *game_piece;
+};
+
+struct GamePiece Queen = {
+		"Queen",
+		true
+};
+
+struct BoardLocation GameBoard[16] = {
+		{0, &Queen}
+};
+
 int
 main()
 {
 	bool game_running = true;
-	int GameBoard[64] = {1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18};
-	printf("%d", GameBoard[2]);
 	while (game_running)
 	{
 		game_running = false;
