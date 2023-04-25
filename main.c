@@ -12,15 +12,23 @@ typedef struct
 	ChessPiece *piece;
 } BoardSquare;
 
-ChessPiece NullPiece = {"NULL"};
-BoardSquare GameBoard[64] = {};
+ChessPiece NullPiece = {"Empty Square"};
+BoardSquare GameBoard[64];
 
 int
 PopulateGameBoard()
 {
-	for (int board_index = 0; board_index < 64; board_index++)
+	int x = 0;
+	int y = 0;
+	for (int board_index = 0; board_index < (sizeof GameBoard / sizeof GameBoard[0]); board_index++)
 	{
-		GameBoard[board_index] = (BoardSquare) {board_index, &NullPiece};
+		GameBoard[board_index] = (BoardSquare) {x + y, &NullPiece};
+		x++;
+		if (x >= 8)
+		{
+			x = 0;
+			y += 10;
+		}
 	}
 	return true;
 }
@@ -30,9 +38,9 @@ main()
 {
 	bool game_running = true;
 	PopulateGameBoard();
-	for (int board_index = 0; board_index < 64; board_index++)
+	for (int board_index = 0; board_index < 20; board_index++)
 	{
-		printf("%d - %s\n", GameBoard[board_index].id, GameBoard[board_index].piece->name);
+		printf("%d - %d - %s\n", board_index, GameBoard[board_index].id, GameBoard[board_index].piece->name);
 	}
 	while (game_running)
 	{
