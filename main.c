@@ -1,31 +1,39 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-struct GamePiece
+typedef struct
 {
-	char name[10];
-	bool is_white;
-};
+	char name[12];
+} ChessPiece;
 
-struct BoardLocation
+typedef struct
 {
-	int number;
-	struct GamePiece *game_piece;
-};
+	int id;
+	ChessPiece *piece;
+} BoardSquare;
 
-struct GamePiece Queen = {
-		"Queen",
-		true
-};
+ChessPiece NullPiece = {"NULL"};
+BoardSquare GameBoard[64] = {};
 
-struct BoardLocation GameBoard[16] = {
-		{0, &Queen}
-};
+int
+PopulateGameBoard()
+{
+	for (int board_index = 0; board_index < 64; board_index++)
+	{
+		GameBoard[board_index] = (BoardSquare) {board_index, &NullPiece};
+	}
+	return true;
+}
 
 int
 main()
 {
 	bool game_running = true;
+	PopulateGameBoard();
+	for (int board_index = 0; board_index < 64; board_index++)
+	{
+		printf("%d - %s\n", GameBoard[board_index].id, GameBoard[board_index].piece->name);
+	}
 	while (game_running)
 	{
 		game_running = false;
