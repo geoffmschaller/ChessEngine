@@ -3,6 +3,7 @@
 #include "../include/chess_pieces.h"
 #include "../include/chess_movement.h"
 #include "../include/main.h"
+#include "../include/console_output.h"
 
 int
 WinMain(
@@ -16,9 +17,14 @@ WinMain(
 	printf("\n");
 	while (game_mode != TERMINATING)
 	{
-		ValidateAndMoveChessPiece(&ChessPieces[0], 0, 1, VALIDATE_AND_MOVE);
-		ValidateAndMoveChessPiece(&ChessPieces[0], 0, 1, VALIDATE_AND_MOVE);
-		printf("Final Position: %s: %dx%d", ChessPieces[0].name, ChessPieces[0].x, ChessPieces[0].y);
+		ValidateAndMoveChessPiece(&ChessPieces[1], 0, 1, VALIDATE_AND_MOVE);
+		ValidateAndMoveChessPiece(&ChessPieces[1], 0, 1, VALIDATE_AND_MOVE);
+		ValidateAndMoveChessPiece(&ChessPieces[17], 0, -1, VALIDATE_AND_MOVE);
+		ValidateAndMoveChessPiece(&ChessPieces[17], 0, -1, VALIDATE_AND_MOVE);
+		ValidateAndMoveChessPiece(&ChessPieces[25], 0, -1, VALIDATE_AND_MOVE);
+		ValidateAndMoveChessPiece(&ChessPieces[25], 0, -1, VALIDATE_AND_MOVE);
+		ValidateAndMoveChessPiece(&ChessPieces[25], 0, -1, VALIDATE_AND_MOVE);
+		PrintBoard();
 		game_mode = TERMINATING;
 	}
 	return 0;

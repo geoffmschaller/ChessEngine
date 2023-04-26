@@ -42,10 +42,12 @@ typedef struct
 /*
  * Array of pieces on the board.
  */
-static ChessPiece ChessPieces[3] = {
-		{"PAWN A", 1, 1, WHITE, PAWN},
-		{"PAWN B", 1, 3, WHITE, PAWN},
-		{"PAWN C", 1, 5, BLACK, PAWN}
-};
+extern ChessPiece ChessPieces[33];
+
+/*
+ * Returns the pointer of a ChessPiece at a given coordinates
+ */
+ChessPiece *GetPieceAtCoordinates(int x, int y);
+
 
 #endif //CHESSENGINE_CHESS_PIECES_H

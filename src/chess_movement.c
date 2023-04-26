@@ -32,22 +32,6 @@ GetCoordinateType(
 }
 
 /*
- * Get Piece at Coordinates
- */
-ChessPiece *
-GetPieceAtCoordinates(
-		int x,
-		int y
-)
-{
-	for (int piece_index = 0; piece_index < (sizeof ChessPieces / sizeof ChessPieces[0]); piece_index++)
-	{
-		if (ChessPieces[piece_index].x == x && ChessPieces[piece_index].y == y) return &ChessPieces[piece_index];
-	}
-	// TODO: Fix bug if can't find piece at coordinates
-}
-
-/*
  * Validates and Moves the chess piece, kills the opponent piece if applicable.
  */
 bool
