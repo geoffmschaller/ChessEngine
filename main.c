@@ -7,6 +7,7 @@ int
 main()
 {
 	bool game_running = true;
+	printf("\n");
 	while (game_running)
 	{
 		ValidateAndMoveChessPiece(&ChessPieces[0], 0, 1, VALIDATE_AND_MOVE);
@@ -14,5 +15,6 @@ main()
 		printf("Final Position: %s: %dx%d", ChessPieces[0].name, ChessPieces[0].x, ChessPieces[0].y);
 		game_running = false;
 	}
+	printf("\n");
 	return 0;
 }

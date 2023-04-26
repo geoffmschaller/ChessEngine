@@ -13,7 +13,7 @@ COORDINATE_TYPE
 GetCoordinateType(
 		int x,
 		int y,
-		Color color
+		PIECE_COLOR color
 )
 {
 	if (x < 1 || x > 8 || y < 1 || y > 8) return OUT_OF_BOUNDS;
