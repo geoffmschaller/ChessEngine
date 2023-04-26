@@ -24,6 +24,7 @@ WinMain(
 		ValidateAndMoveChessPiece(&ChessPieces[25], 0, -1, VALIDATE_AND_MOVE);
 		ValidateAndMoveChessPiece(&ChessPieces[25], 0, -1, VALIDATE_AND_MOVE);
 		ValidateAndMoveChessPiece(&ChessPieces[25], 0, -1, VALIDATE_AND_MOVE);
+		ValidateAndMoveChessPiece(&ChessPieces[25], 3, 0, VALIDATE_AND_MOVE);
 		PrintBoard();
 		game_mode = TERMINATING;
 	}
