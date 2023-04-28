@@ -6,9 +6,6 @@
 #include <stdbool.h>
 #include "../include/chess_movement.h"
 
-/*
- * Determines the coordinate type.
- */
 COORDINATE_TYPE
 GetCoordinateType(
 		int x,
@@ -31,9 +28,6 @@ GetCoordinateType(
 	return EMPTY_SPACE;
 }
 
-/*
- * Validates and Moves the chess piece, kills the opponent piece if applicable.
- */
 bool
 ValidateAndMoveChessPiece(
 		ChessPiece *piece,

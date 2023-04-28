@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "../include/chess_pieces.h"
 
+
 ChessPiece *
 GetPieceAtCoordinates(int x, int y)
 {
@@ -48,5 +49,5 @@ ChessPiece ChessPieces[33] = {
 		{"BK", 5, 8, BLACK, KING},
 		{"BB", 6, 8, BLACK, BISHOP},
 		{"BN", 7, 8, BLACK, KNIGHT},
-		{"BR", 8, 8, BLACK, ROOK},
+		{"BR", 8, 8, BLACK, ROOK}
 };

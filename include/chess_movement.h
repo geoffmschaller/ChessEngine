@@ -19,7 +19,7 @@ typedef enum
 } MOVE_TYPE;
 
 /*
- * Type return from a coordinate validation.
+ * Type return from a coordinate validation. Informs about the square at a given coordinates.
  */
 typedef enum
 {

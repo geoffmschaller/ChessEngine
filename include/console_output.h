@@ -6,7 +6,7 @@
 #define CHESSENGINE_CONSOLE_OUTPUT_H
 
 /*
- * Prints the Chess Board to the console.
+ * Prints a representation of the board and piece locations to the console.
  */
 void PrintBoard();
 

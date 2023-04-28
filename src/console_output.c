@@ -6,6 +6,7 @@
 #include "../include/console_output.h"
 #include "../include/chess_pieces.h"
 
+
 void PrintBoard()
 {
 	printf("\n");
