@@ -28,43 +28,17 @@ GetCoordinateType(
 	return EMPTY_SPACE;
 }
 
-bool
-ValidateAndMoveChessPiece(
-		ChessPiece *piece,
-		int x_offset,
-		int y_offset,
-		MOVE_TYPE move_type
+int
+ValidateToChessMove(
+		CHESS_MOVE chess_move
 )
 {
-	int new_x = piece->x + x_offset;
-	int new_y = piece->y + y_offset;
-	printf("Validating %s at %dx%d\n", piece->name, new_x, new_y);
-	COORDINATE_TYPE coord_type = GetCoordinateType(new_x, new_y, piece->color);
-	switch (coord_type)
-	{
-		case OUT_OF_BOUNDS:
-			printf("Move was out of bounds. INVALID.\n");
-			return false;
-		case SELF_OCCUPIED:
-			printf("Self Occupied. INVALID.\n");
-			return false;
-		default:
-			break;
-	}
-	if (move_type == VALIDATE_ONLY)
-	{
-		printf("Valid Move. VALIDATE ONLY\n");
-		return true;
-	}
-	if (coord_type == OPPONENT_OCCUPIED)
-	{
-		ChessPiece *opponent = GetPieceAtCoordinates(new_x, new_y);
-		opponent->x = 0;
-		opponent->y = 0;
-		printf("Opponent Was killed. VALID\n");
-	}
-	piece->x = new_x;
-	piece->y = new_y;
-	printf("Piece moved. VALID\n");
+
+	return -1;
+}
+
+bool
+MovePieceToChessMove(CHESS_MOVE chess_move)
+{
 	return true;
 }

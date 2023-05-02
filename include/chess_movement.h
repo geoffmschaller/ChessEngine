@@ -18,6 +18,14 @@ typedef enum
 	VALIDATE_AND_MOVE
 } MOVE_TYPE;
 
+typedef struct
+{
+	ChessPiece piece;
+	int destination_x;
+	int destination_y;
+	int value;
+} CHESS_MOVE;
+
 /*
  * Type return from a coordinate validation. Informs about the square at a given coordinates.
  */
@@ -32,12 +40,12 @@ typedef enum
 /*
  * Either validates a potential move, or validates then moves the piece.
  */
-bool
-ValidateAndMoveChessPiece(
-		ChessPiece *piece,
-		int x,
-		int y,
-		MOVE_TYPE move_type
+int
+ValidateToChessMove(
+		CHESS_MOVE chess_move
 );
+
+bool
+MovePieceToChessMove(CHESS_MOVE chess_move);
 
 #endif //CHESSENGINE_CHESS_MOVEMENT_H
